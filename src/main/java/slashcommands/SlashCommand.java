@@ -1,7 +1,9 @@
 package slashcommands;
 
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
+import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 
 public interface SlashCommand {
-    void execute(MessageReceivedEvent event, String[] args);
+    CommandData getCommandData();
+    void execute(SlashCommandInteractionEvent event);
 }

@@ -1,5 +1,7 @@
-package commands;
+package messagecommands;
 
+import messagecommands.commands.TestMessageCommand;
+import messagecommands.commands.VersionMessageCommand;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.util.Arrays;
@@ -11,8 +13,8 @@ public class CommandHandler {
     public CommandHandler() {
         commands = new HashMap<>();
         // Cambiar carga por reflexion mejor
-        commands.put("test", new Test());
-        commands.put("version", new Version());
+        commands.put("test", new TestMessageCommand());
+        commands.put("version", new VersionMessageCommand());
     }
 
     public void executeCommand(MessageReceivedEvent event, String mensaje) {

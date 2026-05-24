@@ -1,12 +1,13 @@
-package commands;
+package messagecommands.commands;
 
+import messagecommands.Command;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import service.VersionService;
 
-public class Version implements Command {
+public class VersionMessageCommand implements Command {
     VersionService vs;
 
-    Version() {
+    public VersionMessageCommand() {
         vs = new VersionService();
     }
 

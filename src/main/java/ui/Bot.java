@@ -9,6 +9,7 @@ import net.dv8tion.jda.api.interactions.InteractionContextType;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.requests.GatewayIntent;
+import slashcommands.SlashCommandRegistry;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -35,23 +36,8 @@ public class Bot extends ListenerAdapter {
                 .addEventListeners(new SlashCommandListener(), new MessageListener())
                 .build()
                 .awaitReady()
-                .updateCommands().addCommands(
-                        Commands.slash("version", "Consultar informacion sobre una version de Genshin Impact.")
-                                .addOption(OptionType.STRING, "n_version", "numero de la version", true)
-                                .setIntegrationTypes(IntegrationType.USER_INSTALL)
-                                .setContexts(
-                                        InteractionContextType.GUILD,
-                                        InteractionContextType.BOT_DM,
-                                        InteractionContextType.PRIVATE_CHANNEL
-                                ),
-                        Commands.slash("franban", "Devuelve los dias restantes del baneo de insano_tilin123.")
-                                .setIntegrationTypes(IntegrationType.USER_INSTALL)
-                                .setContexts(
-                                        InteractionContextType.GUILD,
-                                        InteractionContextType.BOT_DM,
-                                        InteractionContextType.PRIVATE_CHANNEL
-                                )
-
-                ).queue();
+                .updateCommands()
+                .addCommands(new SlashCommandRegistry().getCommandData()) // Los comandos de aqui son los que haran que salgan y te habilitaran usarlos
+                .queue();
     }
 }
