@@ -43,6 +43,13 @@ public class Bot extends ListenerAdapter {
                                         InteractionContextType.GUILD,
                                         InteractionContextType.BOT_DM,
                                         InteractionContextType.PRIVATE_CHANNEL
+                                ),
+                        Commands.slash("franban", "Devuelve los dias restantes del baneo de insano_tilin123.")
+                                .setIntegrationTypes(IntegrationType.USER_INSTALL)
+                                .setContexts(
+                                        InteractionContextType.GUILD,
+                                        InteractionContextType.BOT_DM,
+                                        InteractionContextType.PRIVATE_CHANNEL
                                 )
 
                 ).queue();
