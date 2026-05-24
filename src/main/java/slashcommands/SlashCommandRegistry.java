@@ -8,17 +8,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SlashCommandRegistry {
-    private List<CommandData> dataList;
+    private List<SlashCommand> dataList;
 
     public SlashCommandRegistry() {
         dataList = new ArrayList<>();
 
         // Meter reflexion
-        dataList.add(new VersionSlashCommand().getCommandData());
-        dataList.add(new FranBanSlashCommand().getCommandData());
+        dataList.add(new VersionSlashCommand());
+        dataList.add(new FranBanSlashCommand());
     }
 
     public List<CommandData> getCommandData() {
+        return dataList.stream().map(SlashCommand::getCommandData).toList();
+    }
+
+    public List<SlashCommand> getCommands() {
         return dataList;
     }
 }

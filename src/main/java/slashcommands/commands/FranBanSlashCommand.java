@@ -12,9 +12,17 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 public class FranBanSlashCommand implements SlashCommand {
+    public static final String id = "franban";
+    public static final String description = "Devuelve los dias restantes del baneo de insano_tilin123.";
+
+    @Override
+    public String getName() {
+        return id;
+    }
+
     @Override
     public CommandData getCommandData() {
-        return Commands.slash("franban", "Devuelve los dias restantes del baneo de insano_tilin123.")
+        return Commands.slash(id, description)
                 .setIntegrationTypes(IntegrationType.USER_INSTALL)
                 .setContexts(
                         InteractionContextType.GUILD,

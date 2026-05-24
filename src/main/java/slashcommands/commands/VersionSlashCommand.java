@@ -12,6 +12,9 @@ import slashcommands.SlashCommand;
 import java.util.Objects;
 
 public class VersionSlashCommand implements SlashCommand {
+    public static final String id = "version";
+    public static final String description = "Consultar informacion sobre una version de Genshin Impact.";
+
     VersionService vs;
 
     public VersionSlashCommand() {
@@ -19,8 +22,13 @@ public class VersionSlashCommand implements SlashCommand {
     }
 
     @Override
+    public String getName() {
+        return id;
+    }
+
+    @Override
     public CommandData getCommandData() {
-        return Commands.slash("version", "Consultar informacion sobre una version de Genshin Impact.")
+        return Commands.slash(id, description)
                 .addOption(OptionType.STRING, "n_version", "numero de la version", true)
                 .setIntegrationTypes(IntegrationType.USER_INSTALL)
                 .setContexts(
