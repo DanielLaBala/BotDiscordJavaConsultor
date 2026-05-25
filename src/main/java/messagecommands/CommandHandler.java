@@ -1,10 +1,6 @@
 package messagecommands;
 
-import messagecommands.commands.TestMessageCommand;
-import messagecommands.commands.VersionMessageCommand;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import slashcommands.SlashCommand;
-import slashcommands.SlashCommandRegistry;
 
 import java.util.Arrays;
 import java.util.HashMap;

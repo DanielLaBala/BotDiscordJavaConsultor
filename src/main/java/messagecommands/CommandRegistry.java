@@ -11,10 +11,10 @@ public class CommandRegistry {
     private final List<Command> dataList;
 
     CommandRegistry() {
-        dataList = new ArrayList<>();
-
-        dataList.add(new TestMessageCommand());
-        dataList.add(new VersionMessageCommand());
+        dataList = List.of(
+            new TestMessageCommand(),
+            new VersionMessageCommand()
+        );
     }
 
     List<Command> getCommands() {

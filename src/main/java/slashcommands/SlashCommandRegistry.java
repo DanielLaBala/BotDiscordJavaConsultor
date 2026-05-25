@@ -1,8 +1,7 @@
 package slashcommands;
 
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
-import slashcommands.commands.FranBanSlashCommand;
-import slashcommands.commands.VersionSlashCommand;
+import slashcommands.commands.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,11 +10,13 @@ public class SlashCommandRegistry {
     private final List<SlashCommand> dataList;
 
     public SlashCommandRegistry() {
-        dataList = new ArrayList<>();
-
-        // Meter reflexion
-        dataList.add(new VersionSlashCommand());
-        dataList.add(new FranBanSlashCommand());
+        dataList = List.of(
+            new VersionSlashCommand(),
+            new FranBanSlashCommand(),
+            new RestriccionDivinaSlashCommand(),
+            new RandomSlashCommand(),
+            new OperacionSlashCommand()
+        );
     }
 
     public List<CommandData> getCommandData() {

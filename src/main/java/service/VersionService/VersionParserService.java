@@ -1,4 +1,4 @@
-package service;
+package service.VersionService;
 
 import model.DatosVersion;
 import model.Fecha;
@@ -7,7 +7,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.HashMap;
 
-public class ServicioParser {
+public class VersionParserService {
     public void cargarDatos(HashMap<String, DatosVersion> datos) {
         try (BufferedReader br = new BufferedReader(new FileReader("datos.csv"))) {
             while (br.ready()) {

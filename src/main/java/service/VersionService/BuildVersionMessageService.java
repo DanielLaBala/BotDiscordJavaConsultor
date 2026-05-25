@@ -1,10 +1,10 @@
-package service;
+package service.VersionService;
 
 import model.DatosVersion;
 
-public class VersionService {
+public class BuildVersionMessageService {
     public String buildVersionMessage(String version) {
-        ServicioDatos sd = new ServicioDatos();
+        VersionService sd = new VersionService();
         DatosVersion dv = sd.getDatos(version);
 
         if (dv != null) {
