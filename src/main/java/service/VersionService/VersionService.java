@@ -1,17 +1,12 @@
-package service;
+package service.VersionService;
 
 import dao.DAODatosVersion;
 import model.DatosVersion;
 
-import java.time.LocalDate;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-
-public class ServicioDatos {
+public class VersionService {
     DAODatosVersion daoDatosVersion;
 
-    public ServicioDatos() {
+    public VersionService() {
         daoDatosVersion = new DAODatosVersion();
     }
 

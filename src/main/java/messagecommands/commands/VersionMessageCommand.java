@@ -2,15 +2,15 @@ package messagecommands.commands;
 
 import messagecommands.Command;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import service.VersionService;
+import service.VersionService.BuildVersionMessageService;
 
 public class VersionMessageCommand implements Command {
     static final String ID = "version";
 
-    VersionService vs;
+    BuildVersionMessageService vs;
 
     public VersionMessageCommand() {
-        vs = new VersionService();
+        vs = new BuildVersionMessageService();
     }
 
     @Override
@@ -22,7 +22,7 @@ public class VersionMessageCommand implements Command {
         if (args.length > 0) {
             String version = args[0];
 
-            VersionService vs = new VersionService();
+            BuildVersionMessageService vs = new BuildVersionMessageService();
             String respuesta = vs.buildVersionMessage(version);
 
             if (respuesta != null) {

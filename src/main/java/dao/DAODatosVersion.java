@@ -1,7 +1,7 @@
 package dao;
 
 import model.DatosVersion;
-import service.ServicioParser;
+import service.VersionService.VersionParserService;
 
 import java.util.HashMap;
 
@@ -9,7 +9,7 @@ public class DAODatosVersion {
     private final HashMap<String, DatosVersion> registros = new HashMap<>(); // Carga al inicio de la aplicacion, no por cada consulta, lo cual no es del todo bueno pero vaya
 
     public DAODatosVersion() {
-        ServicioParser sp = new ServicioParser();
+        VersionParserService sp = new VersionParserService();
         sp.cargarDatos(registros);
     }
 
