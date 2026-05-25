@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SlashCommandRegistry {
-    private List<SlashCommand> dataList;
+    private final List<SlashCommand> dataList;
 
     public SlashCommandRegistry() {
         dataList = new ArrayList<>();
@@ -19,7 +19,7 @@ public class SlashCommandRegistry {
     }
 
     public List<CommandData> getCommandData() {
-        return dataList.stream().map(SlashCommand::getCommandData).toList();
+        return dataList.stream().map(SlashCommand::getCommandData).toList(); // s -> s.getCommandData()
     }
 
     public List<SlashCommand> getCommands() {

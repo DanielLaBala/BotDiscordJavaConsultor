@@ -14,9 +14,6 @@ public class SlashCommandHandler {
 
     public SlashCommandHandler() {
         commands = new HashMap<>();
-        // Cambiar carga por reflexion mejor
-//        commands.put(VersionSlashCommand.id, new VersionSlashCommand());
-//        commands.put(FranBanSlashCommand.id, new FranBanSlashCommand());
 
         List<SlashCommand> commandList = scr.getCommands();
 

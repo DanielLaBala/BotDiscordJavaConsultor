@@ -3,18 +3,26 @@ package messagecommands;
 import messagecommands.commands.TestMessageCommand;
 import messagecommands.commands.VersionMessageCommand;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import slashcommands.SlashCommand;
+import slashcommands.SlashCommandRegistry;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class CommandHandler {
     HashMap<String, Command> commands;
 
+    CommandRegistry cr = new CommandRegistry();
+
     public CommandHandler() {
         commands = new HashMap<>();
-        // Cambiar carga por reflexion mejor
-        commands.put("test", new TestMessageCommand());
-        commands.put("version", new VersionMessageCommand());
+
+        List<Command> commandList = cr.getCommands();
+
+        for (Command command : commandList) {
+            commands.put(command.getName(), command);
+        }
     }
 
     public void executeCommand(MessageReceivedEvent event, String mensaje) {

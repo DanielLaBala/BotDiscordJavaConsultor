@@ -5,10 +5,17 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import service.VersionService;
 
 public class VersionMessageCommand implements Command {
+    static final String ID = "version";
+
     VersionService vs;
 
     public VersionMessageCommand() {
         vs = new VersionService();
+    }
+
+    @Override
+    public String getName() {
+        return ID;
     }
 
     public void execute(MessageReceivedEvent event, String[] args) {
