@@ -40,13 +40,21 @@ public class RandomSlashCommand implements SlashCommand {
         OptionMapping number1OP = event.getOption("n1");
         OptionMapping number2OP = event.getOption("n2");
 
-        if (number1OP == null | number2OP == null) {
+        if (number1OP == null || number2OP == null) {
             event.reply("Los parametros proporcionados no son correctos.").setEphemeral(true).queue();
             return;
         }
 
-        int number1 = number1OP.getAsInt();
-        int number2 = number2OP.getAsInt();
+        int number1;
+        int number2;
+
+        try {
+            number1 = number1OP.getAsInt();
+            number2 = number2OP.getAsInt();
+        } catch (ArithmeticException | NumberFormatException e) {
+            event.reply("Los parametros proporcionados no son correctos.").setEphemeral(true).queue();
+            return;
+        }
 
         if (number1 > number2) {
             int aux = number2;
