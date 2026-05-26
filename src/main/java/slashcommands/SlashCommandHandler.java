@@ -10,10 +10,12 @@ import java.util.List;
 public class SlashCommandHandler {
     HashMap<String, SlashCommand> commands;
 
-    SlashCommandRegistry scr = new SlashCommandRegistry();
+    SlashCommandRegistry scr;
 
-    public SlashCommandHandler() {
+    public SlashCommandHandler(SlashCommandRegistry scr) {
         commands = new HashMap<>();
+
+        this.scr = scr;
 
         List<SlashCommand> commandList = scr.getCommands();
 

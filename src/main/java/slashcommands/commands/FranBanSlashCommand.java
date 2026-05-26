@@ -6,6 +6,7 @@ import net.dv8tion.jda.api.interactions.IntegrationType;
 import net.dv8tion.jda.api.interactions.InteractionContextType;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
+import service.MessageService;
 import slashcommands.SlashCommand;
 
 import java.time.LocalDate;
@@ -14,6 +15,12 @@ import java.time.temporal.ChronoUnit;
 public class FranBanSlashCommand implements SlashCommand {
     public static final String id = "franban";
     public static final String description = "Devuelve los dias restantes del baneo de insano_tilin123.";
+
+    MessageService ms;
+
+    public FranBanSlashCommand(MessageService messageService) {
+        ms = messageService;
+    }
 
     @Override
     public String getName() {

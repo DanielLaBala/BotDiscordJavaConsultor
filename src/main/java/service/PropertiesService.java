@@ -1,4 +1,4 @@
-package slashcommands;
+package service;
 
 import ui.Bot;
 

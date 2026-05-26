@@ -9,8 +9,8 @@ public class VersionMessageCommand implements Command {
 
     BuildVersionMessageService vs;
 
-    public VersionMessageCommand() {
-        vs = new BuildVersionMessageService();
+    public VersionMessageCommand(BuildVersionMessageService vs) {
+        this.vs = vs;
     }
 
     @Override
@@ -22,7 +22,6 @@ public class VersionMessageCommand implements Command {
         if (args.length > 0) {
             String version = args[0];
 
-            BuildVersionMessageService vs = new BuildVersionMessageService();
             String respuesta = vs.buildVersionMessage(version);
 
             if (respuesta != null) {

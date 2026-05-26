@@ -5,10 +5,14 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import slashcommands.SlashCommandHandler;
 
 public class SlashCommandListener extends ListenerAdapter {
-    SlashCommandHandler ch = new SlashCommandHandler();
+    SlashCommandHandler sch;
+
+    public SlashCommandListener(SlashCommandHandler sch) {
+        this.sch = sch;
+    }
 
     @Override
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
-        ch.executeCommand(event);
+        sch.executeCommand(event);
     }
 }

@@ -9,10 +9,12 @@ import java.util.List;
 public class CommandHandler {
     HashMap<String, Command> commands;
 
-    CommandRegistry cr = new CommandRegistry();
+    CommandRegistry cr;
 
-    public CommandHandler() {
+    public CommandHandler(CommandRegistry cr) {
         commands = new HashMap<>();
+
+        this.cr = cr;
 
         List<Command> commandList = cr.getCommands();
 

@@ -9,6 +9,7 @@ import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
+import service.MessageService;
 import service.VersionService.BuildVersionMessageService;
 import slashcommands.SlashCommand;
 
@@ -17,6 +18,12 @@ import java.util.Objects;
 public class OperacionSlashCommand implements SlashCommand {
     public static final String id = "operacion";
     public static final String description = "Realiza operaciones matematicas.";
+
+    MessageService ms;
+
+    public OperacionSlashCommand(MessageService messageService) {
+        ms = messageService;
+    }
 
     @Override
     public String getName() {

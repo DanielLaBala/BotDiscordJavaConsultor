@@ -1,6 +1,8 @@
 package slashcommands;
 
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
+import service.MessageService;
+import service.VersionService.BuildVersionMessageService;
 import slashcommands.commands.*;
 
 import java.util.ArrayList;
@@ -9,13 +11,14 @@ import java.util.List;
 public class SlashCommandRegistry {
     private final List<SlashCommand> dataList;
 
-    public SlashCommandRegistry() {
+    public SlashCommandRegistry(MessageService messageService, BuildVersionMessageService versionMessageService) {
         dataList = List.of(
-            new VersionSlashCommand(),
-            new FranBanSlashCommand(),
-            new RestriccionDivinaSlashCommand(),
-            new RandomSlashCommand(),
-            new OperacionSlashCommand()
+            new VersionSlashCommand(messageService, versionMessageService),
+            new FranBanSlashCommand(messageService),
+            new RestriccionDivinaSlashCommand(messageService),
+            new RandomSlashCommand(messageService),
+            new OperacionSlashCommand(messageService),
+            new EightBallSlashCommand(messageService)
         );
     }
 

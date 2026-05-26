@@ -5,7 +5,11 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 public class MessageListener extends ListenerAdapter {
-    CommandHandler ch = new CommandHandler();
+    CommandHandler ch;
+
+    public MessageListener(CommandHandler commandHandler) {
+        ch = commandHandler;
+    }
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {

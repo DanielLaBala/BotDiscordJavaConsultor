@@ -7,6 +7,7 @@ import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
+import service.MessageService;
 import service.VersionService.BuildVersionMessageService;
 import slashcommands.SlashCommand;
 
@@ -16,6 +17,12 @@ import java.util.Random;
 public class RandomSlashCommand implements SlashCommand {
     public static final String id = "random";
     public static final String description = "Elegir una opcion aleatoria entre dos numeros incluidos.";
+
+    MessageService ms;
+
+    public RandomSlashCommand(MessageService messageService) {
+        ms = messageService;
+    }
 
     @Override
     public String getName() {

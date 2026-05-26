@@ -6,6 +6,7 @@ import net.dv8tion.jda.api.interactions.IntegrationType;
 import net.dv8tion.jda.api.interactions.InteractionContextType;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
+import service.MessageService;
 import slashcommands.SlashCommand;
 
 import java.time.LocalDate;
@@ -14,6 +15,12 @@ import java.time.temporal.ChronoUnit;
 public class RestriccionDivinaSlashCommand implements SlashCommand {
     public static final String id = "restricciondivina";
     public static final String description = "Devuelve los dias restantes de la restriccion divina de daniel_mui.";
+
+    MessageService ms;
+
+    public RestriccionDivinaSlashCommand(MessageService messageService) {
+        ms = messageService;
+    }
 
     @Override
     public String getName() {

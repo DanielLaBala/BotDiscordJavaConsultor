@@ -6,6 +6,7 @@ import net.dv8tion.jda.api.interactions.InteractionContextType;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
+import service.MessageService;
 import service.VersionService.BuildVersionMessageService;
 import slashcommands.SlashCommand;
 
@@ -16,9 +17,11 @@ public class VersionSlashCommand implements SlashCommand {
     public static final String description = "Consultar informacion sobre una version de Genshin Impact.";
 
     BuildVersionMessageService vs;
+    MessageService ms;
 
-    public VersionSlashCommand() {
-        vs = new BuildVersionMessageService();
+    public VersionSlashCommand(MessageService messageService, BuildVersionMessageService vs) {
+        this.vs = vs;
+        ms = messageService;
     }
 
     @Override

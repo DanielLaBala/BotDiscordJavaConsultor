@@ -3,8 +3,14 @@ package service.VersionService;
 import model.DatosVersion;
 
 public class BuildVersionMessageService {
+    VersionService sd;
+
+    public BuildVersionMessageService(VersionService versionService) {
+        sd = versionService;
+    }
+
     public String buildVersionMessage(String version) {
-        VersionService sd = new VersionService();
+
         DatosVersion dv = sd.getDatos(version);
 
         if (dv != null) {
