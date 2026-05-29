@@ -24,4 +24,10 @@ public class PropertiesService {
     public String getDiscordToken() {
         return p.getProperty("discord.token");
     }
+    public int getMaxFileMB() {
+        return Integer.parseInt(p.getProperty("max_file_mb"));
+    } // todo comprobar excepciones de parseint
+    public int getHashMapLimit() {
+        return Integer.parseInt(p.getProperty("max_hashmap_size"));
+    }
 }

@@ -2,10 +2,9 @@ package messagecommands;
 
 import messagecommands.commands.TestMessageCommand;
 import messagecommands.commands.VersionMessageCommand;
+import model.Command;
 import service.VersionService.BuildVersionMessageService;
-import slashcommands.SlashCommand;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CommandRegistry {

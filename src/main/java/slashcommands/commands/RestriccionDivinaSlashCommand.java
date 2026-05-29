@@ -7,7 +7,7 @@ import net.dv8tion.jda.api.interactions.InteractionContextType;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import service.MessageService;
-import slashcommands.SlashCommand;
+import model.SlashCommand;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;

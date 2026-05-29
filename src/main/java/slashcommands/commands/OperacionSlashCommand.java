@@ -10,10 +10,7 @@ import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 import service.MessageService;
-import service.VersionService.BuildVersionMessageService;
-import slashcommands.SlashCommand;
-
-import java.util.Objects;
+import model.SlashCommand;
 
 public class OperacionSlashCommand implements SlashCommand {
     public static final String id = "operacion";

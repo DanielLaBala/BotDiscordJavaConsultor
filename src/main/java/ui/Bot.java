@@ -8,6 +8,7 @@ import messagecommands.CommandRegistry;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.requests.GatewayIntent;
+import service.CreacionUsoMensajesService;
 import service.MessageService;
 import service.PropertiesService;
 import service.VersionService.BuildVersionMessageService;
@@ -22,10 +23,12 @@ public class Bot extends ListenerAdapter {
         DAODatosVersion daoDatosVersion = new DAODatosVersion();
         VersionService versionService = new VersionService(daoDatosVersion);
         BuildVersionMessageService buildVersionMessageService = new BuildVersionMessageService(versionService);
-        SlashCommandRegistry slashCommandRegistry = new SlashCommandRegistry(messageService, buildVersionMessageService);
+        CreacionUsoMensajesService creacionUsoMensajesService = new CreacionUsoMensajesService(propertiesService);
+        SlashCommandRegistry slashCommandRegistry = new SlashCommandRegistry(messageService, buildVersionMessageService, creacionUsoMensajesService, propertiesService);
         SlashCommandHandler slashCommandHandler = new SlashCommandHandler(slashCommandRegistry);
         CommandRegistry commandRegistry = new CommandRegistry(buildVersionMessageService);
         CommandHandler commandHandler = new CommandHandler(commandRegistry);
+        // Toda la inyeccion superior se deberia de hacer en una clase aparte no en el main
 
         JDABuilder.createDefault(propertiesService.getDiscordToken())
                 .enableIntents(GatewayIntent.MESSAGE_CONTENT)

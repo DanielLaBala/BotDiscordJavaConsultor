@@ -1,8 +1,7 @@
 package slashcommands;
 
+import model.SlashCommand;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
-import slashcommands.commands.FranBanSlashCommand;
-import slashcommands.commands.VersionSlashCommand;
 
 import java.util.HashMap;
 import java.util.List;

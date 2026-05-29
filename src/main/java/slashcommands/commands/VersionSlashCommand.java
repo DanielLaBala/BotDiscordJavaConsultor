@@ -8,7 +8,7 @@ import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import service.MessageService;
 import service.VersionService.BuildVersionMessageService;
-import slashcommands.SlashCommand;
+import model.SlashCommand;
 
 import java.util.Objects;
 

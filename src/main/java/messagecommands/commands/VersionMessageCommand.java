@@ -1,6 +1,6 @@
 package messagecommands.commands;
 
-import messagecommands.Command;
+import model.Command;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import service.VersionService.BuildVersionMessageService;
 

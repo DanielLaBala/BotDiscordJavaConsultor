@@ -8,11 +8,7 @@ import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import service.MessageService;
-import service.VersionService.BuildVersionMessageService;
-import slashcommands.SlashCommand;
-
-import java.util.Objects;
-import java.util.Random;
+import model.SlashCommand;
 
 public class RandomSlashCommand implements SlashCommand {
     public static final String id = "random";

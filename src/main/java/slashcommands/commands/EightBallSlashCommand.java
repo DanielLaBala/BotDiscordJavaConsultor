@@ -1,7 +1,5 @@
 package slashcommands.commands;
 
-import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.IntegrationType;
 import net.dv8tion.jda.api.interactions.InteractionContextType;
@@ -10,9 +8,7 @@ import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import service.MessageService;
-import slashcommands.SlashCommand;
-
-import java.time.temporal.ChronoUnit;
+import model.SlashCommand;
 
 public class EightBallSlashCommand implements SlashCommand {
     public static final String ID = "8ball";

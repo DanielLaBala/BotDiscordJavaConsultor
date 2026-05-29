@@ -1,6 +1,6 @@
 package messagecommands.commands;
 
-import messagecommands.Command;
+import model.Command;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public class TestMessageCommand implements Command {
