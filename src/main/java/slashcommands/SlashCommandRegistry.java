@@ -15,14 +15,16 @@ public class SlashCommandRegistry {
 
     public SlashCommandRegistry(MessageService messageService, BuildVersionMessageService versionMessageService, CreacionUsoMensajesService creacionUsoMensajesService, PropertiesService propertiesService) {
         dataList = List.of(
-            new VersionSlashCommand(messageService, versionMessageService),
-            new FranBanSlashCommand(messageService),
-            new RestriccionDivinaSlashCommand(messageService),
-            new RandomSlashCommand(messageService),
-            new OperacionSlashCommand(messageService),
-            new EightBallSlashCommand(messageService),
-            new CrearMensajeSlashCommand(messageService, creacionUsoMensajesService, propertiesService),
-            new UsarMensajeSlashCommand(messageService, creacionUsoMensajesService)
+                new VersionSlashCommand(messageService, versionMessageService),
+                new FranBanSlashCommand(messageService),
+                new RestriccionDivinaSlashCommand(messageService),
+                new RandomSlashCommand(messageService),
+                new OperacionSlashCommand(messageService),
+                new EightBallSlashCommand(messageService),
+                new CrearMensajeSlashCommand(messageService, creacionUsoMensajesService, propertiesService),
+                new UsarMensajeSlashCommand(messageService, creacionUsoMensajesService),
+                new EliminarMensajeSlashCommand(messageService, creacionUsoMensajesService),
+                new ListarMensajesSlashCommand(messageService, creacionUsoMensajesService)
         );
     }
 

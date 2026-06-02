@@ -3,10 +3,19 @@ package model;
 import java.time.LocalDate;
 
 public class MensajePersonalizado {
+    String id;
     String mensaje;
     String creador;
     String mediaUrl;
     LocalDate fecha;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getMensaje() {
         return mensaje;
@@ -24,7 +33,8 @@ public class MensajePersonalizado {
         return mediaUrl;
     }
 
-    public MensajePersonalizado(String mensaje, String creador, String mediaUrl) {
+    public MensajePersonalizado(String id, String mensaje, String creador, String mediaUrl) {
+        this.id = id;
         this.mensaje = mensaje;
         this.creador = creador;
         this.fecha = LocalDate.now();
