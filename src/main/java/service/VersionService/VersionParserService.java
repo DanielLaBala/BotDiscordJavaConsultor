@@ -3,13 +3,29 @@ package service.VersionService;
 import model.DatosVersion;
 import model.Fecha;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashMap;
 
 public class VersionParserService {
     public void cargarDatos(HashMap<String, DatosVersion> datos) {
-        try (BufferedReader br = new BufferedReader(new FileReader("datos.csv"))) {
+
+        BufferedReader br = null;
+
+        if (Files.exists(Paths.get("datos.csv"))) {
+            try {
+                br = new BufferedReader(new FileReader("datos.csv"));
+            } catch (FileNotFoundException ignored) {}
+        } else { // Si no existe el archivo de versiones en el directorio del ejecutable se usa el de resources, asi le damos autonomia y en el peor de los casos tenemos ese por si acaso
+            InputStream contenido = VersionParserService.class.getResourceAsStream("/datos.csv");
+
+            if (contenido == null) throw new RuntimeException("No existe datos.csv en los resources.");
+
+            br = new BufferedReader(new InputStreamReader(contenido));
+        }
+
+        try {
             while (br.ready()) {
                 String linea = br.readLine();
                 String[] campos = linea.split(",");
@@ -30,6 +46,9 @@ public class VersionParserService {
 
                 datos.put(version, new DatosVersion(version, fechaLanzamiento, fechaDirecto));
             }
-        } catch (Exception ignored) {}
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
